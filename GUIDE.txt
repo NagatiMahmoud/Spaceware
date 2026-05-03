@@ -1,0 +1,35 @@
+Space Shooter - Beginner Guide
+
+This guide explains the files and how to change basic things.
+
+Files:
+- `main.py`: The game loop. Starts the game. Handles input and screens.
+- `settings.py`: All numbers and paths. Change speed, window size here.
+- `player.py`: Player class. Change player image, speed, lives here.
+- `enemy.py`: Enemy class. Change enemy speed and behavior here.
+- `bullet.py`: Bullet class. Change bullet speed and appearance here.
+- `utils.py`: Helper functions to load images and draw text.
+- `assets/`: Put `images/` and `sounds/` folders here.
+
+How the files work together:
+- `main.py` imports the classes from `player.py`, `enemy.py`, `bullet.py`.
+- `main.py` uses `settings.py` for constants like screen size.
+- `utils.py` helps loading images and drawing text.
+
+How to modify the game (easy edits):
+- Change player speed: open `settings.py` and edit `PLAYER_SPEED`.
+- Change spawn rate: edit `ENEMY_SPAWN_DELAY` in `settings.py`.
+- Add more lives: set `PLAYER_LIVES` in `settings.py`.
+- Add images: drop PNGs into `assets/images/` named `player.png`, `enemy.png`, `bullet.png`, `background.png`.
+- Add sounds: drop WAV/OGG into `assets/sounds/` named `shoot.wav`, `explosion.wav`, `music.ogg`.
+
+Game logic in simple words:
+- The game loop checks for player keys.
+- Every few seconds an enemy is created at the top.
+- Bullets move up; if a bullet hits an enemy the enemy is removed and score increases.
+- If enemy hits the player or passes the bottom the player loses a life.
+- When lives reach zero the game shows Game Over.
+
+Tips for teachers:
+- Ask students to change colors, speeds, and spawn rates to see effects.
+- Let them add a new enemy type by copying `Enemy` and changing shape.
